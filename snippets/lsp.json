@@ -1,0 +1,338 @@
+{
+    "Bloco chaves": {
+      "prefix": "inicio",
+      "body": [
+        "{",
+        "\t$1",
+        "}"
+      ],
+      "description": "Bloco de comandos { }"
+    },
+    "Bloco chaves com Senao": {
+      "prefix": "iniciosenao",
+      "body": [
+        "{",
+        "\t$1",
+        "}",
+        "Senao",
+        "{",
+        "\t$2",
+        "}"
+      ],
+      "description": "Bloco de comandos { } com Senão"
+    },
+    "Laco Para": {
+      "prefix": "para",
+      "body": [
+        "Para (${1:x} = ${2:1}; ${1:x} <= ${3:nMaximo}; ${1:x}++)",
+        "{",
+        "\t$4",
+        "}"
+      ],
+      "description": "Laço de repetição 'Para'"
+    },
+    "Laco Enquanto": {
+      "prefix": "enquanto",
+      "body": [
+        "Enquanto (${1:Condicao})",
+        "{",
+        "\t$2",
+        "}"
+      ],
+      "description": "Laço de repetição 'Enquanto' (While)"
+    },
+    "Condicao Se": {
+      "prefix": "se",
+      "body": [
+        "Se (${1:Condicao})",
+        "{",
+        "\t$0",
+        "}"
+      ],
+      "description": "Comando condicional Se"
+    },
+    "Condicao Se Senao": {
+      "prefix": "sesenao",
+      "body": [
+        "Se (${1:Condicao})",
+        "{",
+        "\t$2",
+        "}",
+        "Senao",
+        "{",
+        "\t$3",
+        "}"
+      ],
+      "description": "Comando condicional Se com Senao"
+    },
+    "Definir Alfa": {
+      "prefix": "defalfa",
+      "body": [
+        "Definir Alfa ${1:aVariavel};"
+      ],
+      "description": "Declaração de Variável: Alfanumérica (String)"
+    },
+    "Definir Numero": {
+      "prefix": "defnum",
+      "body": [
+        "Definir Numero ${1:nVariavel};"
+      ],
+      "description": "Declaração de Variável: Numérica (Inteiro ou Decimal)"
+    },
+    "Definir Data": {
+      "prefix": "defdata",
+      "body": [
+        "Definir Data ${1:dData};"
+      ],
+      "description": "Declaração de Variável: Data"
+    },
+    "Definir Cursor": {
+      "prefix": "defcur",
+      "body": [
+        "Definir Cursor Cur_${2:Tabela};"
+      ],
+      "description": "Declaração de Variável: Cursor (Base de Dados)"
+    },
+    "Definir Lista": {
+      "prefix": "deflista",
+      "body": [
+        "Definir Lista ${1:LLista};"
+      ],
+      "description": "Declaração de Variável: Lista Dinâmica em Memória"
+    },
+    "Definir Tabela (Array)": {
+      "prefix": "deftabela",
+      "body": [
+        "Definir Tabela ${1:NomeTabela}[${2:10}] = {",
+        "\t${3|Alfa,Numero,Data|} ${4:NomeCampo};",
+        "};"
+      ],
+      "description": "Declaração de Variável: Tabela/Array Multidimensional em Memória"
+    },
+    "Definir Funcao": {
+      "prefix": "deffuncao",
+      "body": [
+        "Definir Funcao ${1:NomeFuncao}(${2:Numero nParam1, Alfa aParam2})",
+        "",
+        "Funcao ${1:NomeFuncao}(${2:Numero nParam1, Alfa aParam2})",
+        "{",
+        "\t$0",
+        "}"
+      ],
+      "description": "Declaração e escopo de uma Função Personalizada"
+    },
+    "Tamanho Alfa": {
+      "prefix": "tamanhoalfa",
+      "body": [
+        "TamanhoAlfa(${1:aVariavel}, ${2:nTamanho});"
+      ],
+      "description": "Obtém o tamanho (length) da string"
+    },
+    "Copiar Alfa": {
+      "prefix": "copiaralfa",
+      "body": [
+        "CopiarAlfa(${1:aVariavel}, ${2:nInicio}, ${3:nQuantidade});"
+      ],
+      "description": "Extrai um excerto de texto (Substring)"
+    },
+    "Deletar Alfa": {
+      "prefix": "deletaralfa",
+      "body": [
+        "DeletarAlfa(${1:aVariavel}, ${2:nInicio}, ${3:nQuantidade});"
+      ],
+      "description": "Remove uma secção de texto da string original"
+    },
+    "Limpar Espacos Em Branco": {
+      "prefix": "limpaespacos",
+      "body": [
+        "LimpaEspacos(${1:aVariavel});"
+      ],
+      "description": "Remove os espaços em branco no início e no fim da string (Trim)"
+    },
+    "Retirar Acentuacao": {
+      "prefix": "retiraacentuacao",
+      "body": [
+        "RetiraAcentuacao(${1:aVariavel});"
+      ],
+      "description": "Remove acentos e converte a string para maiúsculas"
+    },
+    "Retirar Caracteres Especiais": {
+      "prefix": "retiracaracteres",
+      "body": [
+        "RetiraCaracteresEspeciais(${1:aVariavel});"
+      ],
+      "description": "Remove tudo o que não seja letras e números"
+    },
+    "Procurar Posicao String": {
+      "prefix": "posicaostr",
+      "body": [
+        "PosicaoStr(\"${1:aProcurar}\", ${2:aTextoAlvo}, ${3:nPosicaoRetorno});"
+      ],
+      "description": "Retorna a posição inicial de um texto dentro de outro (IndexOf)"
+    },
+    "Substituir Alfa (Todos)": {
+      "prefix": "substalfa",
+      "body": [
+        "SubstAlfa(\"${1:aAntigo}\", \"${2:aNovo}\", ${3:aTextoAlvo});"
+      ],
+      "description": "Substitui todas as ocorrências de um texto por outro (Replace)"
+    },
+    "Lista Regra - Criar e Iniciar": {
+      "prefix": "listaregracriar",
+      "body": [
+        "Definir Numero ${1:nLista};",
+        "ListaRegraCriarLista(${1:nLista});",
+        "",
+        "ListaRegraNovaLinha(${1:nLista});",
+        "ListaRegraAddValorLinha${2|Alfa,Numero,Data|}(${1:nLista}, \"${3:Coluna}\", ${4:Valor}, ${5:aStatus});",
+        "ListaRegraSalvarLinha(${1:nLista});"
+      ],
+      "description": "Cria uma nova Lista Regra (Novo Padrão) e adiciona um valor"
+    },
+    "Lista Regra - Carregar JSON": {
+      "prefix": "listajson",
+      "body": [
+        "Definir Numero ${1:nListaJson};",
+        "ListaRegraCriarLista(${1:nListaJson});",
+        "ListaRegraCarregarJson(${1:nListaJson}, ${2:aConteudoJson}, \"${3:grupo_array}\", \"${4:id;codigo;descricao}\");",
+        "",
+        "ListaRegraPrimeiro(${1:nListaJson}, ${5:aAchou});",
+        "Enquanto (${5:aAchou} = \"S\")",
+        "{",
+        "\tListaRegraObterValorAlfa(${1:nListaJson}, \"${6:codigo}\", ${7:aRetorno}, ${8:aObteve});",
+        "\t$0",
+        "\tListaRegraProximo(${1:nListaJson}, ${5:aAchou});",
+        "}",
+        "ListaRegraLiberarLista(${1:nListaJson});"
+      ],
+      "description": "Carrega dados de um JSON estruturado diretamente para uma Lista Regra"
+    },
+    "Valor Elemento JSON (Avulso)": {
+      "prefix": "jsonvalor",
+      "body": [
+        "ValorElementoJson(${1:aConteudoJSON}, \"${2:nome_do_grupo}\", \"${3:nome_da_chave}\", ${4:aValorRetorno});"
+      ],
+      "description": "Lê um valor específico de um elemento dentro do ficheiro JSON"
+    },
+    "Cursor SQL_ Nativo (Completo)": {
+      "prefix": "sqlcriarfull",
+      "body": [
+        "Definir Alfa ${1:aQuery};",
+        "${1:aQuery} = \"SELECT ${2:CAMPO} FROM ${3:TABELA} WHERE ${4:CONDICAO} = :pVar \";",
+        "",
+        "SQL_Criar(${5:cCursor});",
+        "SQL_UsarSqlSenior2(${5:cCursor}, 0);",
+        "SQL_DefinirComando(${5:cCursor}, ${1:aQuery});",
+        "SQL_DefinirInteiro(${5:cCursor}, \"pVar\", ${6:nValorFiltro});",
+        "SQL_AbrirCursor(${5:cCursor});",
+        "Enquanto (SQL_EOF(${5:cCursor}) = 0)",
+        "{",
+        "\tSQL_RetornarAlfa(${5:cCursor}, \"${2:CAMPO}\", ${7:aRetorno});",
+        "\t$0",
+        "\tSQL_Proximo(${5:cCursor});",
+        "}",
+        "SQL_FecharCursor(${5:cCursor});",
+        "SQL_Destruir(${5:cCursor});"
+      ],
+      "description": "Estrutura completa de cursor usando comandos nativos SQL_ (Otimizado)"
+    },
+    "Executar Comando SQL": {
+      "prefix": "sqlexecutar",
+      "body": [
+        "Definir Alfa ${1:aSQL};",
+        "Definir Numero ${2:nLinhasAfetadas};",
+        "Definir Alfa ${3:aResultado};",
+        "",
+        "${1:aSQL} = \"UPDATE ${4:TABELA} SET ${5:CAMPO} = '${6:Valor}' WHERE ${7:CONDICAO}\";",
+        "ExecutarComandoSQL(${1:aSQL}, \"N\", ${2:nLinhasAfetadas}, ${3:aResultado});",
+        "Se (${3:aResultado} <> \"OK\")",
+        "{",
+        "\tMensagem(Erro, ${3:aResultado});",
+        "}"
+      ],
+      "description": "Executa um comando DML (Insert/Update/Delete) via função dedicada"
+    },
+    "Criar View Dinamica": {
+      "prefix": "criaview",
+      "body": [
+        "CriaView(\"SELECT ${1:CAMPOS} FROM ${2:TABELA} GROUP BY ${3:CAMPOS}\", ${4:aNomeViewGerada});"
+      ],
+      "description": "Cria uma View temporária na base de dados (Muitíssimo útil em Relatórios)"
+    },
+    "Mensagem Sim / Nao": {
+      "prefix": "msgsimnao",
+      "body": [
+        "Definir Numero ${1:nRetMsg};",
+        "${1:nRetMsg} = Mensagem(\"${2:Deseja continuar?[&Sim,&Não]}\");",
+        "",
+        "Se (${1:nRetMsg} = 1)",
+        "{",
+        "\t$3",
+        "}",
+        "Senao",
+        "{",
+        "\t$4",
+        "}"
+      ],
+      "description": "Apresenta modal de mensagem com opções Sim e Não"
+    },
+    "Mensagem Erro/Trava": {
+      "prefix": "msgerro",
+      "body": [
+        "Mensagem(Erro, \"${1:Processo abortado devido a um erro!}\");"
+      ],
+      "description": "Apresenta mensagem de erro e aborta a execução do processo"
+    },
+    "Mensagem Retorna": {
+      "prefix": "msgretorna",
+      "body": [
+        "Mensagem(Retorna, \"${1:Processo concluído com sucesso.}\");"
+      ],
+      "description": "Apresenta mensagem informativa sem abortar a execução"
+    },
+    "Abrir Ecrã Sistema": {
+      "prefix": "abrirtela",
+      "body": [
+        "AbrirTelaSistema(\"${1:F085CAD}\", ${2:aParametros}, ${3:aExecutar});"
+      ],
+      "description": "Abre um ecrã nativo do ERP passando parâmetros"
+    },
+    "Lote Contabilistico Completo": {
+      "prefix": "lotecompleto",
+      "body": [
+        "LoteLctoCria();",
+        "LoteLctoInicializa(${1:CodEmp}, ${2:CodFil}, ${3:DatLot}, \"${4:IMPORT}\");",
+        "",
+        "Definir Alfa ${5:aResultado};",
+        "LoteLctoAdicionaLctoRet(${2:CodFil}, ${6:DatLct}, ${7:CtaDeb}, ${8:CtaCre}, ${9:VlrLct}, ${10:CodHpd}, \"${11:Complemento}\", \"${12:Documento}\", ${5:aResultado});",
+        "",
+        "Se (${5:aResultado} = \"OK\")",
+        "{",
+        "\tLoteLctoGeraLoteRet(${5:aResultado});",
+        "}",
+        "LoteLctoLibera();"
+      ],
+      "description": "Geração completa de Lote e Lançamentos Contabilísticos em memória"
+    },
+    "Converte Mascara": {
+      "prefix": "convmasc",
+      "body": [
+        "ConverteMascara(${1|1,2,3,4,5|}, ${2:nOrigem}, ${3:aDestino}, \"${4:Mascara}\");"
+      ],
+      "description": "ConverteMascara (Tipos: 1=Num, 2=Dinheiro, 3=Data, 4=Hora, 5=Alfa)"
+    },
+    "Int Para Alfa": {
+      "prefix": "int2alfa",
+      "body": [
+        "IntParaAlfa(${1:nValor}, ${2:aValor});"
+      ],
+      "description": "Converte número inteiro para texto (Alfa)"
+    },
+    "Alfa Para Int": {
+      "prefix": "alfa2int",
+      "body": [
+        "AlfaParaInt(${1:aValor}, ${2:nValor});"
+      ],
+      "description": "Converte texto (Alfa) para número inteiro"
+    }
+}
