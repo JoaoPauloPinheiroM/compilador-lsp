@@ -3,11 +3,19 @@
   "displayName": "LSP Senior Pro",
   "description": "Extensão definitiva e compilador para Linguagem Senior de Programação",
   "version": "1.0.0",
-  "publisher": "joao.paulo.pinheiro.mourao",
+  "publisher": "PMSystem",
   "engines": {
     "vscode": "^1.80.0"
   },
+  "activationEvents": [
+    "onLanguage:lsp"
+  ],
   "main": "./out/extension/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joaopaulopinheiro59675/lsp-senior-pro.git"
+  },
+  "license": "MIT",
   "scripts": {
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
